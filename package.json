@@ -1,0 +1,24 @@
+{
+  "name": "estudiantes",
+  "version": "1.0.0",
+  "description": "API Estudiantes",
+  "main": "index.js",
+
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bablybaqrtasri/servicio-estudiantes.git"
+  },
+  "homepage": "https://github.com/bablybaqrtasri/servicio-estudiantes",
+
+
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Bouchaib El asri",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.2",
+    "save": "^2.4.0"
+  }
+}
