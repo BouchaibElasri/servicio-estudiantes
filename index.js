@@ -27,9 +27,19 @@ app.get("/", (req, res) => {
     res.send("<html><body><h1>My server </h1></body></html>");
 });
 
+
 app.get(BASE_API_PATH + "/estudiantes", (req, res) => {
     console.log(Date() + " - GET /estudiantes");
-    res.send([]);
+
+    db.find({}, (err, estudiantes) => {
+        if (err) {
+            console.log(Date() + "-" + err);
+            res.sendStatus(500);
+        } else {
+            res.send(estudiantes);
+        }
+    });
+
 });
 
 // Post Estudiante
