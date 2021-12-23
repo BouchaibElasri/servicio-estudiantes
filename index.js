@@ -27,6 +27,9 @@ app.get("/", (req, res) => {
     res.send("<html><body><h1>My server </h1></body></html>");
 });
 
+app.get("/api/v1/healthz", (req, res) => {
+    res.sendStatus(200);
+});
 
 app.get(BASE_API_PATH + "/estudiantes", (req, res) => {
     console.log(Date() + " - GET /estudiantes");
@@ -36,7 +39,10 @@ app.get(BASE_API_PATH + "/estudiantes", (req, res) => {
             console.log(Date() + "-" + err);
             res.sendStatus(500);
         } else {
-            res.send(estudiantes);
+            res.send(estudiantes.map((estudiante) => {
+                delete estudiante._id;
+                return estudiante;
+            }));
         }
     });
 
