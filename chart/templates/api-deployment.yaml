@@ -26,7 +26,7 @@ spec:
               valueFrom:
                 secretKeyRef:
                     name: mongodb
-                    key: contacts_mongo_url
+                    key: estudiantes_mongo_url
           ports:
             - name: http
               containerPort: 3000
